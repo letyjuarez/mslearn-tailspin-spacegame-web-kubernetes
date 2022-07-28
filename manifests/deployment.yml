@@ -16,9 +16,7 @@ spec:
         - name: web
           image: tailspinspacegame21324.azurecr.io/web
           ports:
-            - protocol: TCP
-              port: 80
-              targetPort: 8080
+          - containerPort: 80
 ---
 apiVersion : apps/v1
 kind: Deployment
@@ -38,6 +36,4 @@ spec:
         - name: leaderboard
           image: tailspinspacegame21324.azurecr.io/leaderboard
           ports:
-            - protocol: TCP
-              port: 80
-              targetPort: 8080
+          - containerPort: 80
