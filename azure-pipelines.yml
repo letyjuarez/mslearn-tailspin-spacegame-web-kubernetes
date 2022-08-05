@@ -46,7 +46,7 @@ stages:
     displayName: Deploy
     pool:
       vmImage: 'ubuntu-20.04'
-    environment: 'environment.mappappofuf-8520-dev'
+    environment: 'openshift-sandbox.mappappofuf-8520-dev'
     variables:
     - group: Release
     strategy:
