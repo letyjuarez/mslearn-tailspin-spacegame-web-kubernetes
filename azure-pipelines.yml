@@ -46,7 +46,7 @@ stages:
     displayName: Deploy
     pool:
       vmImage: 'ubuntu-20.04'
-    environment: 'spike.default'
+    environment: 'environment.mappappofuf-8520-dev'
     variables:
     - group: Release
     strategy:
