@@ -1,4 +1,5 @@
-trigger: main
+trigger: 
+- 'main'
 variables:
   buildConfiguration: 'Release'
   leaderboardRepository: 'leaderboard'
@@ -25,8 +26,6 @@ stages:
         containerRegistry: 'Container Registry Connection'
         tags: |
           $(tag)
-    - publish: '$(Build.SourcesDirectory)/manifests'
-      artifact: manifests
     - task: Docker@2
       displayName: 'Build and push the leaderboard image to container registry'
       inputs:
@@ -37,6 +36,8 @@ stages:
         containerRegistry: 'Container Registry Connection'
         tags: |
           $(tag)
+    - publish: '$(Build.SourcesDirectory)/manifests'
+      artifact: manifests
 - stage: 'Deploy'
   displayName: 'Deploy the containers'
   dependsOn: Build
